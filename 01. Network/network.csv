@@ -1,3 +1,4 @@
+Let's Edit,,,
 Test ID,Example: Test A.1,,
 Test,Part 1 of 2: To setup the PREAUTH function,,
 ,,,
@@ -7,7 +8,7 @@ MPI_TRANS_TYPE ,SALES,M ,"Transaction Type.
 MPI_MERC_ID ,51,M ,"Merchant ID.
 
 Default: 000000000000051"
-MPI_PAN ,5.1E+15,C ,"Card Number
+MPI_PAN ,5.10E+15,C ,"Card Number
 Not required for Hosted Payment Page
 Not required if MPI_ORI_TRXN_ID provided in INQ, REFUND, VSALES"
 MPI_PAN_EXP ,2508,C ,"Card Expiry Date
@@ -35,7 +36,7 @@ REFUND
 RECURR
 INSTAL
 SALESCOMPL"
-MPI_PURCH_DATE ,2.0031E+13,M ,"Transaction Timestamp.
+MPI_PURCH_DATE ,2.00E+13,M ,"Transaction Timestamp.
 Timestamp when merchant send the transaction.
 Format:
 yyyyMMddHHmmss

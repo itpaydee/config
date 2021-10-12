@@ -1,0 +1,108 @@
+Test ID,Example: Test A.1,,
+Test,Part 1 of 2: To setup the PREAUTH function,,
+,,,
+Field Id ,Value,Mandatory ,Remarks
+MPI_TRANS_TYPE ,SALES,M ,"Transaction Type.
+('SALES'),('VOID'),('VSALES'),('REFUND'),('PRERECURR'),('INITRECUR'),"
+MPI_MERC_ID ,51,M ,"Merchant ID.
+
+Default: 000000000000051"
+MPI_PAN ,5.1E+15,C ,"Card Number
+Not required for Hosted Payment Page
+Not required if MPI_ORI_TRXN_ID provided in INQ, REFUND, VSALES"
+MPI_PAN_EXP ,2508,C ,"Card Expiry Date
+Format: YYMM
+Not Required for Hosted Payment Page Not required if MPI_ORI_TRXN_ID provided in INQ, REFUND, VSALES"
+MPI_CVV2 ,123,C ,"Card CVV2
+Not Required for Hosted Payment Page Not required if MPI_ORI_TRXN_ID provided in INQ, REFUND, VSALES"
+MPI_CARD_HOLDER_NAME ,Test,C ,"Cardholder Name.
+Not Required for Hosted Payment Page Not required if MPI_ORI_TRXN_ID provided in INQ, REFUND, VSALES"
+MPI_PURCH_AMT ,10023,M ,"Transaction Amount. Maximum 19 digits without decimal point appears in this field. The minor unit is implied, based on the transaction currency.
+For example:
+USD 100.23 = 10023
+JPY 12345 = 12345"
+MPI_PURCH_CURR ,,M ,"Transaction currency.
+Format: ISO 4217 3-digits currency code
+Example: MYR = 458"
+MPI_TRXN_ID ,,M ,"Transaction ID.
+Same value as per MPIKeyReq. Cannot be blank."
+MPI_ORI_TRXN_ID ,,C ,"Original Transaction ID.
+Mandatory for below
+transaction types:
+VSALES
+INQ
+REFUND
+RECURR
+INSTAL
+SALESCOMPL"
+MPI_PURCH_DATE ,2.0031E+13,M ,"Transaction Timestamp.
+Timestamp when merchant send the transaction.
+Format:
+yyyyMMddHHmmss
+(24hr format). E.g.
+20031010131522
+Note: This will be overwritten"
+MPI_ADDR_MATCH ,,O ,"Indicates whether the
+Cardholder cardholder
+shipping address and
+Cardholder cardholder
+billing address are the
+same.
+Format:
+Y = Match
+N = Not match"
+MPI_BILL_ADDR_CITY ,,C ,City of the cardholder billing address if any.
+MPI_BILL_ADDR_STATE ,,C ,"State or province of the cardholder billing address if any.
+Format: Country subdivision code defined in ISO 3166-2"
+MPI_BILL_ADDR_CNTRY ,,C ,"Country of the cardholder billing address if any.
+Format: ISO 3166-1 3-
+digit country code"
+MPI_BILL_ADDR_POSTCODE ,,C ,ZIP or other postal code of the cardholder billing address if any.
+MPI_BILL_ADDR_LINE1 ,,C ,First line of the cardholder billing address if any.
+MPI_BILL_ADDR_LINE2 ,,C ,Second line of the cardholder billing address if any.
+MPI_BILL_ADDR_LINE3 ,,C ,Third line of the cardholder billing address if any.
+MPI_SHIP_ADDR_CITY ,,O ,"City of the cardholder
+shipping address."
+MPI_SHIP_ADDR_STATE ,,O ,State or province of the cardholder shipping address.
+MPI_SHIP_ADDR_CNTRY ,,O ,"Country of the cardholder shipping address.
+Format: ISO 3166-1 3-digit country code"
+MPI_SHIP_ADDR_POSTCODE ,,O ,The ZIP or other postal code of the cardholder hipping address requested by the Cardholder.
+MPI_SHIP_ADDR_LINE1 ,,O ,First line of the cardholder shipping address.
+MPI_SHIP_ADDR_LINE2 ,,O ,Second line of the cardholder shipping address.
+MPI_SHIP_ADDR_LINE3 ,,O ,Third line of the cardholder shipping address.
+MPI_EMAIL ,,C ,Email address provided by the Cardholder if any.
+MPI_HOME_PHONE_CC ,,O,
+MPI_HOME_PHONE ,,O ,"The home phone number provided by the Cardholder.
+Refer to ITU-E.164 for additional information on format and length."
+MPI_MOBILE_PHONE_CC ,,O ,"The mobile phone number provided by the
+Cardholder.
+Refer to ITU-E.164 for additional information on format and length."
+MPI_MOBILE_PHONE ,,O,
+MPI_WORK_PHONE_CC ,,O ,"The work phone number provided by the Cardholder.
+Refer to ITU-E.164 for additional information on format and length."
+MPI_WORK_PHONE ,,O,
+MPI_MAC ,,M ,"Merchant Transaction MAC.
+Refer to field description for details on encryption algorithm and verification."
+MPI_RESPONSE_TYPE ,,O ,"Response type return by MPI
+Not applicable for SALES transaction
+Value:
+JSON - JSON format response
+STRING - form data format response
+Default - HTML with callback URL"
+MPI_ADDITIONAL_INFO_IND ,,O ,"Indicate required additional info return by MPI or not, check MPIResp for more details
+Value:
+Y - Yes"
+MPI_RECURRING_FREQUENCY ,,O ,"Authorization frequencies. Minimum numbers of
+days between authorization
+Mandatory; only applicable for:
+PRERECURR INITRECURR INITINSTL transaction"
+MPI_RECURRING_EXPIRY ,,O ,"Instalment expiry date.
+Valid till.
+Mandatory; only applicable for:
+PRERECURR INITRECURR INITINSTL
+Format (YYYYMMDD)"
+MPI_PURCHASE_INSTAL_DATA ,,O ,"Max total instalment count using the transaction id.
+Mandatory; only applicable for INITINSTL
+Value must be greater than 1"
+MPI_RECURRING_MAX_PURCHASE_AMOUNT ,,O ,Max transaction amount
+MPI_RECURRING_TOTAL_PURCHASE_AMOUNT ,,O ,Total transaction amount using this transaction ID

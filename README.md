@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @shenni
-- 👀 I’m interested in ... rooting my lemon cuttings.
+- 👀 I’m interested in ... rooting my lemon cuttings, now durians.
 - 🌱 I’m currently working on ... PCI/DSS 
 - 💞️ I’m looking to collaborate on ... fintech projects
 - 📫 How to reach me ... write to ucshenni@yahoo.com
